@@ -29,7 +29,7 @@ Users should be able to:
 ![Screenshot (312)](https://user-images.githubusercontent.com/72284560/208687632-d467d70a-75ba-48fc-8bcf-dddf25fe9b61.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/pricing-component-with-toggle-o_miHYSGws)
 - Live Site URL: [https://bijaylaxmibehera.github.io/pricing-component-with-toggle/]
 
 ## My process
