@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: var(--very-light-grayish-blue);
+    background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.title {
+    color: var(--dark-grayish-blue);
+    font-size: 2rem;
+}
+
+.switch input {
+    opacity: 0;
+}
+
+.switch {
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    background: linear-gradient(180deg,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%));
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 35px;
+}
+
+.slider:hover {
+    background: hsl(236, 72%, 79%)
+}
+
+.slider::before {
+    position: absolute;
+    content: '';
+    background-color: #FFF;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    transition: .4s;
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+.pricing {
+    color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0;
+}
+
+.pricing label {
+    margin: 0 20px;
+}
+.plans-card{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    row-gap: 1rem;
+}
+.plan-box{
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px hsl(237, 73%, 74%);
+    padding: 2rem 2rem;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+.plan-box.highlighted{
+    background: linear-gradient(180deg,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%));
+    color: #FFF;
+    box-shadow: 0px 4px 12px rgb(190, 193, 246);
+}
+.box-title{
+    margin-bottom: 1rem;
+}
+.anually-price,.monthly-price{
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.monthly-price{
+    display: none;
+}
+.amount{
+    font-size: 2rem;
+}
+ul{
+    list-style: none;
+    margin: 10px 0;
+}
+ul li{
+    border-bottom: 1px solid var( --light-grayish-blue);
+    padding: 1rem;
+}
+ul li:first-child{
+    border-top: 1px solid var( --light-grayish-blue);
+}
+.plan-box a {
+    border: none;
+    background: linear-gradient(180deg,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%));
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 7px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.plan-box a:hover {
+    color: hsl(237, 63%, 64%);
+    background: transparent;
+    border-color: hsl(237, 63%, 64%);
+}
+.plan-box.highlighted a {
+    background: #FFF;
+    color: hsl(237, 63%, 64%);
+}
+
+.plan-box.highlighted a:hover {
+    color: #FFF;
+    border-color: #FFF;
+    background: transparent;
+}
+@media only screen and (min-width:768px) {
+    .wrapper{
+        margin-top: 0;
+    }
+    .title {
+        font-size: 3rem;
+        margin-top: 1rem;
+    }
+    .plans-card{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+    }
+    .plan-box{
+        align-self: center;
+    }
+    .plan-box.highlighted{
+        transform: scaleX(1.05);
+        padding: 3rem 2rem;
+    }
+    .amount{
+        font-size: 3rem;
+    }
+   
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
